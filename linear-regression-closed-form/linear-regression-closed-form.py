@@ -8,8 +8,8 @@ def linear_regression_closed_form(X, y):
     X = np.asarray(X, dtype=float)
     y = np.asarray(y, dtype=float)
     trans_X = np.transpose(X)
-    A = np.linalg.inv(np.dot(trans_X,X))
-    B = np.dot(trans_X,y)
+    A = np.linalg.inv(np.dot(trans_X,X)) @ np.dot(trans_X,y)
+    
 
-    return np.dot(A,B)
+    return A
     
